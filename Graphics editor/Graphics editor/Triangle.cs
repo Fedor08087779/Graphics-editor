@@ -20,18 +20,16 @@ namespace Graphics_editor
 
                 Console.SetCursorPosition(TriangleX + i, TriangleY);
                 Console.Write(Symvol);
+                
             }
-            Console.SetCursorPosition(X, TriangleY);
-            for (int i = 0; i < Length*2; i++)
+            TriangleX = TriangleX - (Length-1);
+            Console.SetCursorPosition(TriangleX, TriangleY);
+            for (int i = 0; i < Length*2-1; i++)
             {
-                Console.SetCursorPosition(X + i, TriangleY);
+                Console.SetCursorPosition(TriangleX, TriangleY);
                 Console.Write(Symvol);
+                TriangleX++;
             }
-            /*for (int i = 0; i < Length; i++)
-            {
-                Console.SetCursorPosition(TriangleX - i, TriangleY);
-                Console.Write(Symvol);
-            }*/
         }
     }
 }

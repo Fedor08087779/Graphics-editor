@@ -11,24 +11,22 @@ namespace Graphics_editor
         {
             Console.ForegroundColor = Color;
             Console.SetCursorPosition(X, Y);
-
+            for (int i = 0; i < Length+1; i++)
+            {
+                Console.Write(Symvol);
+            }
             for (int i = 0; i < Height; i++)
             {
-                Console.SetCursorPosition(X, Y + i);
-                for (int l = 0; l < Length; l++)
-                {
-                    Console.Write(Symvol);
-                }
-                Console.WriteLine();
+                Y++;
+                Console.SetCursorPosition(X, Y);
+                Console.Write(Symvol);
+                Console.SetCursorPosition(X + Length, Y);
+                Console.Write(Symvol);
             }
-            for (int i = 0; i < Height - 2; i++)
+            Console.SetCursorPosition(X, Y);
+            for (int i = 0; i < Length; i++)
             {
-                Console.SetCursorPosition(X + 1, Y + i + 1);
-                for (int l = 0; l < Length - 2; l++)
-                {
-                    Console.Write(" ");
-                }
-                Console.WriteLine();
+                Console.Write(Symvol);
             }
         }
     }

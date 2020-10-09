@@ -12,22 +12,21 @@ namespace Graphics_editor
             Console.SetCursorPosition(X, Y);
             for(int i = 0; i < Length; i++)
             {
-                Console.SetCursorPosition(X, Y+i);
-                for (int l = 0; l < Length; l++)
-                {
-                    Console.Write(Symvol);         
-                }
-                Console.WriteLine();
+                Console.Write(Symvol);
             }
-            for (int m = 0; m < Length-2; m++)
+            for(int i = 0; i < Length; i++)
             {
-                Console.SetCursorPosition(X+1, Y + m+1);
-                for (int n = 0; n < Length-2; n++)
-                {
-                    Console.Write(" ");
-                }
-                Console.WriteLine();
+                Y++;
+                Console.SetCursorPosition(X,Y);
+                Console.Write(Symvol);
+                Console.SetCursorPosition(X+Length,Y);
+                Console.Write(Symvol);
             }
+            Console.SetCursorPosition(X,Y);
+            for (int i = 0; i < Length; i++)
+            {
+                Console.Write(Symvol);
+            }           
         }
     }
 }

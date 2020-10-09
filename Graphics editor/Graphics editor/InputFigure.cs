@@ -196,9 +196,9 @@ namespace Graphics_editor
             Console.SetCursorPosition(0, 0);
             Console.Write("Введите длину треугольника: ");
             int.TryParse(Console.ReadLine(), out int inputTriangleLenght);
-            while (inputTriangleLenght <= 0 || inputTriangleLenght >= 20)
+            while (inputTriangleLenght <= 0 || inputTriangleLenght >= 20 || inputTriangleLenght > inputTriangleleX)
             {
-                Console.Write("Введите длину треугольника не больше 20 и не меньше 0: ");
+                Console.Write("Введите длину треугольника не больше 20 и/или не меньше 0 и/или больше X треугольника: ");
                 int.TryParse(Console.ReadLine(), out inputTriangleLenght);
             }
             triangle.Length = inputTriangleLenght;
