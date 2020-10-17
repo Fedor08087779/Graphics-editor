@@ -17,7 +17,7 @@ namespace Graphics_editor
         public void Draw()
         {
             int SquareX = X;
-            int SquareY = Y;
+            int SquareY = Y; 
             Console.ForegroundColor = Color;
             Console.SetCursorPosition(SquareX, SquareY);
             for(int i = 0; i < Length+1; i++)
