@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+
+
+   using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,7 +11,7 @@ namespace Graphics_editor
     {
         public void MenySquare()
         {
-            Square square = new Square();
+           
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
             Console.SetCursorPosition(0, 0);
@@ -19,7 +22,6 @@ namespace Graphics_editor
                 Console.Write("Введите X квадрата не больше 100 и не меньше 0: ");
                 int.TryParse(Console.ReadLine(), out inputX);
             }
-            square.X = inputX;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -31,7 +33,6 @@ namespace Graphics_editor
                 Console.Write("Введите Y квадрата не больше 100 и не меньше 0: ");
                 int.TryParse(Console.ReadLine(), out inputY);
             }
-            square.Y = inputY;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -44,7 +45,6 @@ namespace Graphics_editor
                 Console.Write("Введите длину квадрата не больше 20 и не меньше 0: ");
                 int.TryParse(Console.ReadLine(), out inputLenght);
             }
-            square.Length = inputLenght;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -58,7 +58,6 @@ namespace Graphics_editor
                 inputSumvol = Console.ReadLine();
                 l = inputSumvol.Length;
             }
-            square.Symvol = inputSumvol;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -73,15 +72,15 @@ namespace Graphics_editor
                 int.TryParse(Console.ReadLine(), out inputColor);
             }
             ConsoleColor color = (ConsoleColor)inputColor;
-            square.Color = color;
-            Console.SetCursorPosition(0, 0);
             
+            Console.SetCursorPosition(0, 0);
+            Square square = new Square(inputX, inputY, inputLenght, inputSumvol, color);
             square.Draw();
             //============================================================
         }
         public void MenyRectangle()
         {
-            Rectangle rectangle = new Rectangle();
+            
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
             Console.SetCursorPosition(0, 0);
@@ -92,7 +91,6 @@ namespace Graphics_editor
                 Console.Write("Введите X прямоугольника не больше 100 и не меньше 0: ");
                 int.TryParse(Console.ReadLine(), out inputRectangleX);
             }
-            rectangle.X = inputRectangleX;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -104,7 +102,6 @@ namespace Graphics_editor
                 Console.Write("Введите Y прямоугольника не больше 100 и не меньше 0: ");
                 int.TryParse(Console.ReadLine(), out inputRectangleY);
             }
-            rectangle.Y = inputRectangleY;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -116,7 +113,6 @@ namespace Graphics_editor
                 Console.Write("Введите длину прямоугольника не больше 20 и не меньше 0: ");
                 int.TryParse(Console.ReadLine(), out inputRectangleLenght);
             }
-            rectangle.Length = inputRectangleLenght;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -128,7 +124,6 @@ namespace Graphics_editor
                 Console.Write("Введите высоту прямоугольника не больше 20 и не меньше 0: ");
                 int.TryParse(Console.ReadLine(), out inputRectangleHeight);
             }
-            rectangle.Height = inputRectangleHeight;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -143,7 +138,6 @@ namespace Graphics_editor
                 inputRectangleSumvol = Console.ReadLine();
                 symvolRectangle = inputRectangleSumvol.Length;
             }
-            rectangle.Symvol = inputRectangleSumvol;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -158,15 +152,14 @@ namespace Graphics_editor
                 int.TryParse(Console.ReadLine(), out inputRectangleColor);
             }
             ConsoleColor colorRectangle = (ConsoleColor)inputRectangleColor;
-            rectangle.Color = colorRectangle;
             Console.SetCursorPosition(0, 0);
-           
+            Rectangle rectangle = new Rectangle(inputRectangleX, inputRectangleY, inputRectangleLenght, inputRectangleSumvol, colorRectangle, inputRectangleHeight);
             rectangle.Draw();
             //============================================================
         }
         public void MenyTriangle()
         {
-            Triangle triangle = new Triangle();
+            
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
             Console.SetCursorPosition(0, 0);
@@ -177,7 +170,6 @@ namespace Graphics_editor
                 Console.Write("Введите X треугольника не больше 100 и не меньше 0: ");
                 int.TryParse(Console.ReadLine(), out inputTriangleleX);
             }
-            triangle.X = inputTriangleleX;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -189,7 +181,6 @@ namespace Graphics_editor
                 Console.Write("Введите Y квадрата не больше 100 и не меньше 0: ");
                 int.TryParse(Console.ReadLine(), out inputTriangleY);
             }
-            triangle.Y = inputTriangleY;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -201,7 +192,6 @@ namespace Graphics_editor
                 Console.Write("Введите длину треугольника не больше 20 и/или не меньше 0 и/или больше X треугольника: ");
                 int.TryParse(Console.ReadLine(), out inputTriangleLenght);
             }
-            triangle.Length = inputTriangleLenght;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -215,7 +205,6 @@ namespace Graphics_editor
                 inputTriangleSumvol = Console.ReadLine();
                 symvolTriangle = inputTriangleSumvol.Length;
             }
-            triangle.Symvol = inputTriangleSumvol;
             //============================================================
             Console.SetCursorPosition(0, 0);
             Console.WriteLine("                                                                        ");
@@ -230,9 +219,8 @@ namespace Graphics_editor
                 int.TryParse(Console.ReadLine(), out inputTriangleColor);
             }
             ConsoleColor colorTriangle = (ConsoleColor)inputTriangleColor;
-            triangle.Color = colorTriangle;
             Console.SetCursorPosition(0, 0);
-            
+            Triangle triangle = new Triangle(inputTriangleleX, inputTriangleY, inputTriangleLenght, inputTriangleSumvol, colorTriangle);
             triangle.Draw();
             //============================================================
         }

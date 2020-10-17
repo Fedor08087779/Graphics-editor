@@ -5,7 +5,15 @@ using System.Text;
 namespace Graphics_editor
 {
     class Triangle : Base
-    {       
+    {
+        public Triangle(int x, int y, int length, string symvol, ConsoleColor color) : base(x, y, length, symvol, color)
+        {
+            X = x;
+            Y = y;
+            Length = length;
+            Symvol = symvol;
+            Color = color;
+        }
         public void Draw()
         {
             int TriangleX = X;

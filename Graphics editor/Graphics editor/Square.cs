@@ -5,24 +5,34 @@ using System.Text;
 namespace Graphics_editor
 {
     class Square : Base
-    {       
+    {        
+        public Square(int x, int y, int length, string symvol, ConsoleColor color):base(x,y,length,symvol,color)
+        {
+            X = x;
+            Y = y;
+            Length = length;
+            Symvol = symvol;
+            Color = color;
+        }
         public void Draw()
         {
+            int SquareX = X;
+            int SquareY = Y;
             Console.ForegroundColor = Color;
-            Console.SetCursorPosition(X, Y);
-            for(int i = 0; i < Length; i++)
+            Console.SetCursorPosition(SquareX, SquareY);
+            for(int i = 0; i < Length+1; i++)
             {
                 Console.Write(Symvol);
             }
             for(int i = 0; i < Length; i++)
             {
-                Y++;
-                Console.SetCursorPosition(X,Y);
+                SquareY++;
+                Console.SetCursorPosition(SquareX, SquareY);
                 Console.Write(Symvol);
-                Console.SetCursorPosition(X+Length,Y);
+                Console.SetCursorPosition(SquareX + Length, SquareY);
                 Console.Write(Symvol);
             }
-            Console.SetCursorPosition(X,Y);
+            Console.SetCursorPosition(SquareX, SquareY);
             for (int i = 0; i < Length; i++)
             {
                 Console.Write(Symvol);
